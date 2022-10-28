@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "title": "Thaggade ley",
+      "author": "endi macha",
+      "id": 1
+    },
+    {
+      "title": "sarley bro",
+      "author": "mawa bro",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "hii bro",
+      "author": "how are u"
+    },
+    {
+      "id": 6,
+      "title": "enna thala",
+      "author": "how are u"
+    }
+  ]
+}
