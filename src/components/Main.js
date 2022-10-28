@@ -8,7 +8,9 @@ function Main() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addPost({id:~~(Math.random()*10),title,author}))
+    dispatch(addPost({ id: ~~(Math.random() * 50), title, author }));
+    setTitle("");
+    setAuthor("");
   };
   return (
     <div>

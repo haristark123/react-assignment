@@ -5,16 +5,16 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import RightSide from "./components/RightSide";
 import { useEffect } from "react";
-import {useSelector,useDispatch} from 'react-redux'
-import {getAllPosts} from './Redux/Actions/postActions'
+import { useSelector, useDispatch } from "react-redux";
+import { getAllPosts } from "./Redux/Actions/postActions";
 
 function App() {
-  const dispatch = useDispatch()
-  const posts=useSelector(state=>state.allPosts.posts)
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.allPosts.posts);
   useEffect(() => {
-   dispatch(getAllPosts())
+    dispatch(getAllPosts());
   }, [dispatch]);
- console.log(posts)
+  console.log(posts);
   return (
     <div className="container-fluid">
       <div className="row">

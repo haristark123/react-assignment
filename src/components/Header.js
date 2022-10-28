@@ -21,6 +21,8 @@ function Header({ posts }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updatePost(postId, { title, author }));
+    setTitle("")
+    setAuthor("")
   };
 
   return (

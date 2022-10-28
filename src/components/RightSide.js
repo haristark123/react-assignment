@@ -1,5 +1,4 @@
 import React from "react";
-
 function RightSide({ posts }) {
   return (
     <div>
@@ -12,5 +11,4 @@ function RightSide({ posts }) {
     </div>
   );
 }
-
 export default RightSide;
