@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 function Header({ posts }) {
   const dispatch = useDispatch();
-  const singlePost = useSelector((state) => state?.allPosts?.post);
+  const singlePost = useSelector((state) => state?.allPosts?.addUpdate);
   const [postId, setPostId] = useState();
   const [title, setTitle] = useState(singlePost?.title);
   const [author, setAuthor] = useState(singlePost?.author);
+  console.log(singlePost)
   useEffect(() => {
     if (singlePost?.title) {
       setTitle(singlePost?.title);
@@ -16,14 +17,17 @@ function Header({ posts }) {
   }, [singlePost]);
   const handleChange = (e) => {
     setPostId(e.target.value);
-    dispatch(getPost(e.target.value));
+    dispatch(getPost(e.target.value,"GET_POST_UPDATE"));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(updatePost(postId, { title, author }));
-    setTitle("")
-    setAuthor("")
+    setTitle("");
+    setAuthor("");
   };
+  const handleBlur=()=>{
+    
+  }
 
   return (
     <div>
@@ -32,6 +36,7 @@ function Header({ posts }) {
         className="form-select mb-3"
         aria-label="Default select example"
         onChange={handleChange}
+        // onBlur={()=>dispatch(getPost(''))}
       >
         <option selected>Update Post</option>
         {posts?.map(({ id, title }) => (

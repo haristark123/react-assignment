@@ -1,6 +1,7 @@
 const intialState = {
   posts: [],
   post: {},
+  addUpdate: {},
 };
 
 export const postsReducer = (state = intialState, { type, payload }) => {
@@ -15,10 +16,12 @@ export const postsReducer = (state = intialState, { type, payload }) => {
       console.log(result);
       return { ...state, posts: [...result, payload.data] };
     case "GET_POST":
-      return { ...state, post: payload };
+      return { ...state, post: payload, addUpdate: {} };
+    case "GET_POST_UPDATE":
+      return { ...state, addUpdate: payload, post: {} };
     case "DELETE_POST":
-      let resultData = state.posts.filter(({ id }) => id != +payload);
-      return { ...state, posts: resultData };
+      //   let resultData = state.posts.filter(({ id }) => id != +payload);
+      return { ...state, posts: payload };
     default:
       return state;
   }

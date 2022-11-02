@@ -12,15 +12,20 @@ export const addPost = (body) => async (dispatch) => {
 
 export const updatePost = (id, body) => async (dispatch) => {
   const data = await request("PUT", `http://localhost:3000/posts/${id}`, body);
-  dispatch({ type: "UPDATE_POST", payload: {data:data,id:id} });
+  dispatch({ type: "UPDATE_POST", payload: { data: data, id: id } });
 };
-export const getPost = (id) => async (dispatch) => {
+export const getPost = (id,type) => async (dispatch) => {
+//   if (id === '') {
+//     return dispatch({ type, payload: {} });
+//   }
   const data = await request("GET", `http://localhost:3000/posts/${id}`);
-  dispatch({ type: "GET_POST",payload:data});
+  dispatch({ type, payload: data });
 };
 
 export const deletePost = (id) => async (dispatch) => {
-    const data = await request("DELETE", `http://localhost:3000/posts/${id}`);
-    // const resultData = await request("GET", "http://localhost:3000/posts");
-    dispatch({ type: "DELETE_POST",payload:id});
-  };
+  console.log(id);
+  const data = await request("DELETE", `http://localhost:3000/posts/${id}`);
+  const resultData = await request("GET", "http://localhost:3000/posts");
+  // dispatch({ type: "DELETE_POST",payload:id});
+  dispatch({ type: "DELETE_POST", payload: resultData });
+};

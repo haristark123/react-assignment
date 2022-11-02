@@ -2,13 +2,13 @@
   "posts": [
     {
       "title": "Thaggade ley",
-      "author": "endi macha",
+      "author": "endi bayya",
       "id": 1
     },
     {
-      "id": 3,
       "title": "hii bro",
-      "author": "how are u"
+      "author": "how are ",
+      "id": 3
     },
     {
       "id": 6,
@@ -21,19 +21,9 @@
       "author": "vannakam thala"
     },
     {
-      "id": 8,
-      "title": "master",
-      "author": "Thalapathy"
-    },
-    {
-      "id": 41,
-      "title": "hii bro",
-      "author": "sfdsfsd"
-    },
-    {
-      "id": 34,
-      "title": "ori devuda",
-      "author": "sarley "
+      "id": 5,
+      "title": "Hii Anna",
+      "author": "Vannakam"
     }
   ]
 }

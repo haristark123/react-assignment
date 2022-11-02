@@ -1,11 +1,12 @@
 import React from "react";
-import { deletePost } from "../Redux/Actions/postActions";
+import { deletePost,getAllPosts } from "../Redux/Actions/postActions";
 import { useDispatch, useSelector } from "react-redux";
 
 function Footer({ posts }) {
   const dispatch = useDispatch();
   const handleChange = (e) => {
     dispatch(deletePost(e.target.value));
+    dispatch(getAllPosts())
   };
   return (
     <div>
